@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import axios from 'axios'
+import { useState } from 'react';
 import './App.css';
+import InputBar from './components/InputBar.js';
+import List from './components/List.js';
 
 function App() {
+
+  const [roles, setRoles] = useState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">FilmScrape</header>
+      <InputBar setRoles={setRoles}/>
+      <List roles={roles}/>
     </div>
   );
 }
